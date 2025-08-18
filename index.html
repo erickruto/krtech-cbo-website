@@ -64,4 +64,162 @@
     /* Hero Section */
     .hero {
       height: 90vh;
-      background: url('https://images.unsplash.com/photo-1582721752700-51a9d7d8bc84?auto=format&fit=crop&w=1600&q=80') no-repeat center c
+      background: url('https://images.unsplash.com/photo-1582721752700-51a9d7d8bc84?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: #f0c808;
+      color: #2c5530;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e5b507;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about, .programs {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c5530;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c5530;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer a {
+      color: #f0c808;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Krtech CBO</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#programs">Our Programs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Empowering Communities</h1>
+      <p>Promoting sustainable livestock management for a better future</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      Krtech CBO is a community-based organization dedicated to improving livestock management, 
+      enhancing food security, and empowering local communities through training, innovation, 
+      and sustainable practices.
+    </p>
+  </section>
+
+  <!-- Our Programs -->
+  <section class="programs" id="programs">
+    <h2>Our Programs</h2>
+    <div class="programs-grid">
+      <div class="card">
+        <i class="fa-solid fa-cow"></i>
+        <h3>Livestock Health</h3>
+        <p>Training and support to improve livestock health and productivity.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Sustainable Practices</h3>
+        <p>Encouraging eco-friendly and sustainable livestock management.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Community Empowerment</h3>
+        <p>Engaging communities in decision-making and resource management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact">
+    <p>&copy; 2025 Krtech CBO | All Rights Reserved</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">LinkedIn</a>
+    </p>
+  </footer>
+
+</body>
+</html>
