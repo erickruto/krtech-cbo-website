@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krtech CBO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 { margin: 0; }
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+    }
+    nav a:hover { background: #1abc9c; }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 0;
+    }
+    section {
+      margin: 40px 0;
+    }
+    h2 { color: #2c3e50; }
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Krtech CBO</h1>
+    <p>Empowering Communities Through Sustainable Livestock Management</p>
+  </header>
+
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#programs">Programs</a>
+    <a href="#involved">Get Involved</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Krtech CBO is a community-based organization committed to transforming livelihoods through sustainable livestock management. We believe livestock is more than income—it is food security, culture, and resilience. We empower communities through training, innovation, and collaboration.</p>
+      <h3>Our Mission</h3>
+      <p>To improve community well-being by promoting sustainable livestock management practices that enhance productivity, health, and stability.</p>
+      <h3>Our Vision</h3>
+      <p>A thriving community where livestock farming is productive, sustainable, and a reliable source of income and food security.</p>
+      <h3>Our Core Values</h3>
+      <ul>
+        <li>Integrity – Transparent and accountable in all our work.</li>
+        <li>Community Empowerment – Building skills and capacities at the grassroots.</li>
+        <li>Sustainability – Protecting animals, people, and the environment.</li>
+        <li>Partnership – Collaborating with communities, governments, and stakeholders.</li>
+      </ul>
+    </section>
+
+    <section id="programs">
+      <h2>Our Programs</h2>
+      <div class="programs">
+        <div class="card">
+          <h3>Livestock Health & Veterinary Support</h3>
+          <p>We provide veterinary services, vaccination campaigns, and disease prevention training to ensure healthier, stronger animals.</p>
+        </div>
+        <div class="card">
+          <h3>Breeding & Productivity</h3>
+          <p>We support modern breeding, feeding, and husbandry practices to improve livestock quality and output.</p>
+        </div>
+        <div class="card">
+          <h3>Farmer Training</h3>
+          <p>We equip farmers with practical skills through workshops and training on sustainable livestock management.</p>
+        </div>
+        <div class="card">
+          <h3>Market Access & Value Addition</h3>
+          <p>We help farmers access better markets and value-add activities like milk processing, hides, and meat production.</p>
+        </div>
+        <div class="card">
+          <h3>Community Empowerment</h3>
+          <p>We champion environmental conservation, food security, and resilience through education and empowerment programs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="involved">
+      <h2>Get Involved</h2>
+      <p>Change is possible when we work together. Support our mission in different ways:</p>
+      <ul>
+        <li><strong>Volunteer:</strong> Share your time and skills to support our programs.</li>
+        <li><strong>Partner With Us:</strong> Collaborate to expand impact and reach.</li>
+        <li><strong>Donate:</strong> Support our projects through financial or material contributions (M-Pesa, Bank, or PayPal details available).</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Organization Name:</strong> Krtech CBO</p>
+      <p><strong>Focus Area:</strong> Livestock Management & Community Empowerment</p>
+      <p><strong>Email:</strong> info@krtechcbo.org (placeholder)</p>
+      <p><strong>Phone:</strong> +254 700 000 000 (placeholder)</p>
+      <p><strong>Location:</strong> Samburu County, Kenya</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Krtech CBO. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
