@@ -243,8 +243,7 @@
       </div>
     </div>
   </section>
-
-  <!-- ================= Contact Section ================= -->
+<!-- Contact Section -->
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <div class="contact-wrapper">
@@ -252,17 +251,17 @@
     <!-- Contact Form -->
     <div class="contact-form">
       <form id="contactForm" action="https://formspree.io/f/mqalvkao" method="POST">
-        <label for="name">Your Name</label>
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email</label>
+        
+        <label for="email">Email</label>
         <input type="email" id="email" name="_replyto" required>
-
-        <label for="message">Your Message</label>
+        
+        <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
-
+        
         <button type="submit">Send Message</button>
-        <p id="formResponse" class="form-response"></p>
+        <div id="formResponse" class="form-response"></div>
       </form>
     </div>
 
@@ -289,7 +288,6 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- =============== STYLES =============== -->
 <style>
   /* Contact Section */
   .contact {
@@ -339,7 +337,7 @@
     background: #1e3e22;
   }
 
-  /* Response message */
+  /* Response message styles */
   .form-response {
     margin-top: 0.5rem;
     font-size: 0.9rem;
@@ -379,15 +377,16 @@
   }
 </style>
 
-<!-- =============== SCRIPT =============== -->
 <script>
-  // WhatsApp Setup
-  const whatsappNumber = "254713525947"; 
+  // Configurable WhatsApp Setup
+  const whatsappNumber = "254713525947";  // <--- your number
   const defaultMessage = "Hello Krtech, I would like more information about your services.";
+  
+  // Set WhatsApp link dynamically
   const whatsappBtn = document.getElementById("whatsappBtn");
   whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
-  // Handle Formspree form submission
+  // Handle Form Response (Formspree)
   const contactForm = document.getElementById("contactForm");
   const formResponse = document.getElementById("formResponse");
 
