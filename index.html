@@ -1,92 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Krtech CBO</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; }
-    h1, h2, h3 { font-weight: 700; color: #2c5530; }
-    p { font-weight: 400; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      color: #2c5530;
+    }
+
     /* Navbar */
     .navbar {
-      position: sticky; top: 0; background: #2c5530; display: flex;
-      justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c5530;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .navbar .logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
-    .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; }
-    .navbar a {
-      text-decoration: none; color: #fff; font-weight: 600;
+
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
       transition: color 0.3s;
     }
-    .navbar a:hover { color: #f0c808; }
+
+    .nav-links a:hover {
+      color: #f0c808;
+    }
+
+    /* Hero */
+    .hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1582721752700-51a9d7d8bc84?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: #f0c808;
+      color: #2c5530;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e5b507;
+    }
 
     /* Sections */
-    section { padding: 60px 20px; text-align: center; }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1582721752700-51a9d7d8bc84?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      color: #fff; height: 90vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; padding: 0 1rem;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
-    .btn {
-      background: #f0c808; color: #2c5530; padding: 0.8rem 1.5rem;
-      border: none; border-radius: 6px; font-weight: 600;
-      text-decoration: none; transition: background 0.3s;
-    }
-    .btn:hover { background: #ddb507; }
 
-    /* About & Projects & Gallery & Contact styles omitted for brevity (keep your existing ones) */
-
-    /* WhatsApp Button */
-    .whatsapp-float {
-      position: fixed; width: 60px; height: 60px;
-      bottom: 20px; right: 20px; background: #25D366; color: #fff;
-      border-radius: 50%; text-align: center; font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000; transition: transform 0.2s;
+    .about, .programs {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5b; }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c5530;
+    }
+
+    /* Contact Form */
+    .contact {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .contact form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact input, 
+    .contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .contact button {
+      background: #2c5530;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact button:hover {
+      background: #244422;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c5530;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer a {
+      color: #f0c808;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Krtech CBO</div>
-    <ul>
+    <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#programs">Our Programs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h1>Welcome to Krtech CBO</h1>
-    <p>Empowering Communities Through Sustainable Livestock Management</p>
-    <a href="#contact" class="btn">Get Involved</a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Empowering Communities</h1>
+      <p>Promoting sustainable livestock management for a better future</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
   </section>
 
-  <!-- Rest of your sections (About, Projects, Gallery, Contact, Footer) here... -->
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      Krtech CBO is a community-based organization dedicated to improving livestock management, 
+      enhancing food security, and empowering local communities through training, innovation, 
+      and sustainable practices.
+    </p>
+  </section>
 
-  <!-- WHATSAPP -->
-  <a id="whatsappBtn" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <!-- Programs -->
+  <section class="programs" id="programs">
+    <h2>Our Programs</h2>
+    <div class="programs-grid">
+      <div class="card">
+        <i class="fa-solid fa-cow"></i>
+        <h3>Livestock Health</h3>
+        <p>Training and support to improve livestock health and productivity.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Sustainable Practices</h3>
+        <p>Encouraging eco-friendly and sustainable livestock management.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Community Empowerment</h3>
+        <p>Engaging communities in decision-making and resource management.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- SCRIPT -->
-  <script>
-    const whatsappNumber = "254713525947";
-    const defaultMessage = "Hello Krtech, I would like more information about your services.";
-    document.getElementById("whatsappBtn").href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
-      // your existing form submission logic here...
-    });
-  </script>
+  <!-- Contact Form -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Krtech CBO | All Rights Reserved</p>
+    <p>
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">LinkedIn</a>
+    </p>
+  </footer>
+
 </body>
 </html>
