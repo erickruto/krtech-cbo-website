@@ -1,113 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krtech CBO</title>
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-5qz1Thj3A2ZzQ8K8HgY2V8cMW6nJvM5XqSgvjZ6pN1f2n2EC5BvMyoDpYdOZg8WQ4Ahv0tOic+umz2bSzT3qkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <style>
-    /* Contact Section */
-    .contact {
-      padding: 3rem 2rem;
-      background: #f9f9f9;
-    }
-    .contact h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #2c5530;
-    }
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .contact-form, .contact-info {
-      flex: 1;
-      min-width: 300px;
-    }
-    .contact-form label {
-      display: block;
-      margin: 0.5rem 0 0.2rem;
-      font-weight: 600;
-    }
-    .contact-form input, 
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      font-family: inherit;
-    }
-    .contact-form button {
-      background: #2c5530;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .contact-form button:hover {
-      background: #1e3e22;
-    }
-
-    /* Response message styles */
-    .form-response {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      display: none;
-    }
-    .form-response.success {
-      color: green;
-      display: block;
-    }
-    .form-response.error {
-      color: red;
-      display: block;
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: transform 0.2s;
-    }
-    .whatsapp-float i {
-      margin-top: 15px;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #1ebe5b;
-    }
-  </style>
-</head>
 <body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to Krtech CBO</h1>
+    <p>Empowering the community in Maralal, Samburu County, Kenya</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Krtech CBO is a community-based organization dedicated to improving livelihoods, 
+      promoting education, health, and technology for sustainable development in Samburu County.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>Our Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Education Support</h3>
+        <p>We provide resources and mentorship to local schools and students.</p>
+      </div>
+      <div class="project">
+        <h3>Health Programs</h3>
+        <p>We run awareness campaigns and health support in the community.</p>
+      </div>
+      <div class="project">
+        <h3>Technology Training</h3>
+        <p>We train youth and women on digital skills to open new opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/400x250?text=Photo+1" alt="Gallery Photo 1">
+      <img src="https://via.placeholder.com/400x250?text=Photo+2" alt="Gallery Photo 2">
+      <img src="https://via.placeholder.com/400x250?text=Photo+3" alt="Gallery Photo 3">
+      <img src="https://via.placeholder.com/400x250?text=Photo+4" alt="Gallery Photo 4">
+      <img src="https://via.placeholder.com/400x250?text=Photo+5" alt="Gallery Photo 5">
+      <img src="https://via.placeholder.com/400x250?text=Photo+6" alt="Gallery Photo 6">
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section class="contact">
     <h2>Contact Us</h2>
     <div class="contact-wrapper">
-
       <!-- Contact Form -->
       <div class="contact-form">
         <form id="contactForm" action="https://formspree.io/f/mqalvkao" method="POST">
-          <label for="name">Name</label>
+          <label for="name">Full Name</label>
           <input type="text" id="name" name="name" required>
 
           <label for="email">Email</label>
@@ -117,16 +63,16 @@
           <textarea id="message" name="message" rows="5" required></textarea>
 
           <button type="submit">Send Message</button>
-          <div id="formResponse" class="form-response"></div>
+          <p id="formResponse" class="form-response"></p>
         </form>
       </div>
 
       <!-- Contact Info -->
       <div class="contact-info">
         <h3>Visit Us</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
-        <p><i class="fas fa-envelope"></i> info@krtech.org</p>
-        <p><i class="fas fa-phone"></i> +254 713 525 947</p>
+        <p>Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
+        <p><strong>Email:</strong> info@krtech.org</p>
+        <p><strong>Phone:</strong> +254 713 525 947</p>
         
         <!-- Google Map -->
         <div class="map-container">
@@ -144,16 +90,15 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- JavaScript -->
   <script>
-    // Configurable WhatsApp Setup
-    const whatsappNumber = "254713525947";  // <--- replace with your number
+    // WhatsApp Button
+    const whatsappNumber = "254713525947";
     const defaultMessage = "Hello Krtech, I would like more information about your services.";
-    
-    // Set WhatsApp link dynamically
     const whatsappBtn = document.getElementById("whatsappBtn");
     whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
-    // Handle Form Response (Formspree)
+    // Contact Form (Formspree)
     const contactForm = document.getElementById("contactForm");
     const formResponse = document.getElementById("formResponse");
 
@@ -181,4 +126,3 @@
     });
   </script>
 </body>
-</html>
