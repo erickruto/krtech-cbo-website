@@ -245,41 +245,40 @@
   </section>
 
  <!-- Contact Section -->
-<section class="contact" id="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear from you! Reach us using the form, or chat with us directly on WhatsApp.</p>
-
-    <div class="contact-wrapper">
-      <!-- Contact Form -->
-      <form action="https://formspree.io/f/mqalvkao" method="POST" class="contact-form" id="contactForm">
-        <label for="name">Your Name</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="email">Your Email</label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="message">Your Message</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-        <p class="form-response" id="formResponse"></p>
-      </form>
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3>Visit Us</h3>
-        <p>Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
-        <p><strong>Email:</strong> info@krtech.org</p>
-        <p><strong>Phone:</strong> +254 713 525 947</p>
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-wrapper">
+    
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/mqalvkao" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
         
-        <!-- Google Map -->
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63712.12837484533!2d36.781190049999996!3d1.1031797999999946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1784f21ef88caa7b%3A0xa83694c241bb7c2d!2sMaralal!5e0!3m2!1sen!2ske!4v1723987200000!5m2!1sen!2ske" 
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+        <div id="formResponse" class="form-response"></div>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Visit Us</h3>
+      <p>Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
+      <p><strong>Email:</strong> info@krtech.org</p>
+      <p><strong>Phone:</strong> +254 713 525 947</p>
+      
+      <!-- Google Map -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63712.12837484533!2d36.781190049999996!3d1.1031797999999946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1784f21ef88caa7b%3A0xa83694c241bb7c2d!2sMaralal!5e0!3m2!1sen!2ske!4v1723987200000!5m2!1sen!2ske" 
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
       </div>
     </div>
   </div>
@@ -381,7 +380,7 @@
 
 <script>
   // Configurable WhatsApp Setup
-  const whatsappNumber = "254713525947";  // <--- replace with your number
+  const whatsappNumber = "254713525947";  // <--- your number
   const defaultMessage = "Hello Krtech, I would like more information about your services.";
   
   // Set WhatsApp link dynamically
@@ -429,6 +428,7 @@
 
 </body>
 </html>
+
 
 
 
