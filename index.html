@@ -4,156 +4,231 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Krtech CBO</title>
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-5qz1Thj3A2ZzQ8K8HgY2V8cMW6nJvM5XqSgvjZ6pN1f2n2EC5BvMyoDpYdOZg8WQ4Ahv0tOic+umz2bSzT3qkA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Contact Section */
-    .contact {
-      padding: 3rem 2rem;
-      background: #f9f9f9;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
     }
-    .contact h2 {
-      text-align: center;
-      margin-bottom: 1rem;
+    h1, h2, h3 {
+      font-weight: 700;
       color: #2c5530;
     }
+    p { font-weight: 400; }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c5530;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
+    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #f0c808; }
+
+    /* Hero */
+    .hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1582721752700-51a9d7d8bc84?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .btn {
+      background: #f0c808;
+      color: #2c5530;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #ddb507; }
+
+    /* About */
+    .about { padding: 3rem 2rem; text-align: center; background: #f9f9f9; }
+
+    /* Projects */
+    .projects { padding: 3rem 2rem; }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .project-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact */
+    .contact { padding: 3rem 2rem; background: #f9f9f9; }
+    .contact h2 { text-align: center; margin-bottom: 1rem; }
     .contact-wrapper {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       margin-top: 2rem;
     }
-    .contact-form, .contact-info {
-      flex: 1;
-      min-width: 300px;
-    }
-    .contact-form label {
-      display: block;
-      margin: 0.5rem 0 0.2rem;
-      font-weight: 600;
-    }
-    .contact-form input, 
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      font-family: inherit;
+    .contact-form, .contact-info { flex: 1; min-width: 300px; }
+    .contact-form label { display: block; margin: 0.5rem 0 0.2rem; font-weight: 600; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px;
+      margin-bottom: 1rem; font-family: inherit;
     }
     .contact-form button {
-      background: #2c5530;
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
+      background: #2c5530; color: #fff; padding: 0.8rem 1.5rem;
+      border: none; border-radius: 6px; cursor: pointer; font-weight: 600;
     }
-    .contact-form button:hover {
-      background: #1e3e22;
-    }
+    .contact-form button:hover { background: #1e3e22; }
+    .form-response { margin-top: 0.5rem; font-size: 0.9rem; display: none; }
+    .form-response.success { color: green; display: block; }
+    .form-response.error { color: red; display: block; }
 
-    /* Response message styles */
-    .form-response {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      display: none;
-    }
-    .form-response.success {
-      color: green;
-      display: block;
-    }
-    .form-response.error {
-      color: red;
-      display: block;
-    }
-
-    /* WhatsApp Floating Button */
+    /* WhatsApp */
     .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
+      position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
+      background: #25D366; color: #fff; border-radius: 50%; text-align: center;
+      font-size: 30px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 1000;
       transition: transform 0.2s;
     }
-    .whatsapp-float i {
-      margin-top: 15px;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #1ebe5b;
+    .whatsapp-float i { margin-top: 15px; }
+    .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5b; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 1rem; background: #2c5530; color: #fff; margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Krtech CBO</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Contact Section -->
-  <section class="contact">
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Welcome to Krtech CBO</h1>
+      <p>Empowering communities through technology, innovation, and collaboration.</p>
+      <a href="#contact" class="btn">Get Involved</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Krtech CBO is a community-based organization located in Maralal, Samburu County, Kenya. 
+       We are committed to empowering youth, women, and the wider community through technology-driven initiatives.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x300/?community" alt="Community">
+        <h3>Community Empowerment</h3>
+        <p>We create sustainable solutions to uplift communities.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x300/?education" alt="Education">
+        <h3>Education Programs</h3>
+        <p>Providing skills and knowledge to the youth.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/400x300/?technology" alt="Technology">
+        <h3>Tech Innovation</h3>
+        <p>Using technology as a tool for growth and impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <div class="contact-wrapper">
-
       <!-- Contact Form -->
       <div class="contact-form">
         <form id="contactForm" action="https://formspree.io/f/mqalvkao" method="POST">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
-
           <label for="email">Email</label>
-          <input type="email" id="email" name="_replyto" required>
-
+          <input type="email" id="email" name="email" required>
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
-
           <button type="submit">Send Message</button>
           <div id="formResponse" class="form-response"></div>
         </form>
       </div>
-
       <!-- Contact Info -->
       <div class="contact-info">
         <h3>Visit Us</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
-        <p><i class="fas fa-envelope"></i> info@krtech.org</p>
-        <p><i class="fas fa-phone"></i> +254 713 525 947</p>
-        
-        <!-- Google Map -->
+        <p>Krtech CBO<br>Maralal Town, Samburu County, Kenya</p>
+        <p><strong>Email:</strong> info@krtech.org</p>
+        <p><strong>Phone:</strong> +254 713 525 947</p>
         <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63712.12837484533!2d36.781190049999996!3d1.1031797999999946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1784f21ef88caa7b%3A0xa83694c241bb7c2d!2sMaralal!5e0!3m2!1sen!2ske!4v1723987200000!5m2!1sen!2ske" 
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63712.12837484533!2d36.781190049999996!3d1.1031797999999946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1784f21ef88caa7b%3A0xa83694c241bb7c2d!2sMaralal!5e0!3m2!1sen!2ske!4v1723987200000!5m2!1sen!2ske" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- WhatsApp Button -->
   <a id="whatsappBtn" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script>
-    // Configurable WhatsApp Setup
-    const whatsappNumber = "254713525947";  // <--- replace with your number
-    const defaultMessage = "Hello Krtech, I would like more information about your services.";
-    
-    // Set WhatsApp link dynamically
-    const whatsappBtn = document.getElementById("whatsappBtn");
-    whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Krtech CBO. All Rights Reserved.</p>
+  </footer>
 
-    // Handle Form Response (Formspree)
+  <script>
+    // WhatsApp button setup
+    const whatsappNumber = "254713525947";
+    const defaultMessage = "Hello Krtech, I would like more information about your services.";
+    document.getElementById("whatsappBtn").href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+
+    // Formspree submission handling
     const contactForm = document.getElementById("contactForm");
     const formResponse = document.getElementById("formResponse");
 
