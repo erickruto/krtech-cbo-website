@@ -244,7 +244,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+ <!-- Contact Section -->
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/mqalvkao" method="POST">
@@ -254,6 +254,14 @@
     <button type="submit">Send Message</button>
   </form>
   <p id="form-status"></p>
+
+  <!-- Social Media Links -->
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://wa.me/254700000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:info@krtechcbo.org"><i class="fas fa-envelope"></i></a>
+  </div>
 </section>
 
 <script>
@@ -342,7 +350,27 @@
     margin-top: 1rem;
     font-weight: bold;
   }
+
+  /* Social Media Icons */
+  .social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+    color: #2c5530;
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  .social-links a:hover {
+    color: #f0c808;
+    transform: scale(1.2);
+  }
 </style>
+
 
 
   <!-- Footer -->
